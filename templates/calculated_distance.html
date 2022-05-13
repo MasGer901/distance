@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Рассчет расстояния
+{% endblock title %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h1>Рассчитанное расстояние</h1>
+
+    {% for el in post %}
+    <div class="alert alert-info">
+        <h2>Город {{ el[1] }}, улица {{ el[2] }}, дом {{ el[3] }}</h2>
+        <p>Расстояние от нулевой точки МКАДа до указанного адреса равняется {{ el[6] }}Км.</p>
+        <a href="/posts" class="btn btn-warning">Назад</a>
+        <a href="/posts/{{ el[0] }}/delete" class="btn btn-danger">Удалить рассчет</a>
+    </div>
+    {% endfor %}
+</div>
+{% endblock body %}

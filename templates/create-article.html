@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+Рассчет дистанции
+{% endblock title %}
+
+
+{% block body %}
+  <style>
+   textarea {
+    width: 70%; /* Ширина поля в процентах */
+    height: 30px; /* Высота поля в пикселах */
+    resize: none; /* Запрещаем изменять размер */
+   }
+   button { width: 15%; /* Ширина поля в процентах */
+    height: 50px; /* Высота поля в пикселах */
+    resize: none; /* Запрещаем изменять размер */}
+  </style>
+<div class="container mt-5">
+    <h1>Рассчет дистанции</h1>
+    <form method="post">
+        <textarea name="city" id="city" class="from-control" placeholder="Введите город"></textarea><br>
+        <textarea name="street" id="street" class="from-control" placeholder="Введите название улицы"></textarea><br>
+        <input name="house" id="house" class="from-control" placeholder="Введите номер дома"><br>
+        <!textarea name="text" id="text" class="from-control" placeholder="Введите основной текст"><!/textarea><!br>
+        <input type="submit" class="btn btn-success" value="Отправить на рассчет"><br>
+        <a href="/" class="btn btn-warning">Вернуться на главную</a>
+    </form>
+</div>
+{% endblock body %}

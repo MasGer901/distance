@@ -1,0 +1,22 @@
+16:17:47 - _internal - INFO - _log: 224 -  * Running on http://127.0.0.1:5000 (Press CTRL+C to quit)
+16:17:47 - _internal - INFO - _log: 224 -  * Restarting with stat
+16:17:47 - _internal - WARNING - _log: 224 -  * Debugger is active!
+16:17:47 - _internal - INFO - _log: 224 -  * Debugger PIN: 812-956-629
+16:18:22 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:22] "GET / HTTP/1.1" 200 -
+16:18:22 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:22] "[33mGET /static/css/main.css HTTP/1.1[0m" 404 -
+16:18:22 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+16:18:25 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:25] "GET /create-article HTTP/1.1" 200 -
+16:18:25 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:25] "[33mGET /static/css/main.css HTTP/1.1[0m" 404 -
+16:18:28 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:28] "GET /create-article HTTP/1.1" 200 -
+16:18:28 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:28] "[33mGET /static/css/main.css HTTP/1.1[0m" 404 -
+16:18:30 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:30] "[35m[1mGET /posts HTTP/1.1[0m" 500 -
+16:18:30 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:30] "[36mGET /posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+16:18:30 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:30] "[36mGET /posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+16:18:30 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:30] "[36mGET /posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+16:18:30 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:18:30] "[36mGET /posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+16:26:44 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:26:44] "GET / HTTP/1.1" 200 -
+16:26:44 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:26:44] "[33mGET /static/css/main.css HTTP/1.1[0m" 404 -
+16:26:47 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:26:47] "[35m[1mGET /posts HTTP/1.1[0m" 500 -
+16:26:47 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:26:47] "[36mGET /posts?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1[0m" 304 -
+16:26:47 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:26:47] "[36mGET /posts?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1[0m" 304 -
+16:26:47 - _internal - INFO - _log: 224 - 127.0.0.1 - - [13/May/2022 16:26:47] "[36mGET /posts?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
