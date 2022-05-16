@@ -36,3 +36,17 @@ def delete_calculated(id):
         cursor = db.cursor()
         cursor.execute(f'DELETE FROM USERS_LOCATION WHERE id = "{id}"')
         db.commit()
+
+
+with sql.connect('service.db') as db:
+    cursor = db.cursor()
+    query = """CREATE TABLE IF NOT EXISTS "USERS_LOCATION" (
+	"id"	INTEGER NOT NULL UNIQUE,
+	"city"	TEXT NOT NULL,
+	"street"	TEXT NOT NULL,
+	"house"	INTEGER NOT NULL,
+	"Lo1"	REAL NOT NULL,
+	"La1"	REAL NOT NULL,
+	"calculated"	INTEGER NOT NULL,
+	PRIMARY KEY("id" AUTOINCREMENT)
+)"""

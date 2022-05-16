@@ -6,4 +6,4 @@ WORKDIR /root
 
 RUN pip install flask requests gunicorn
 
-CMD [ "python", "./app.py" ]
+CMD [ "python", "./app.py", "./database" ]
