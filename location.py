@@ -1,12 +1,13 @@
 import requests
 import json
+import api_key
 
 
 def location(local):
     global res
-    api_key = '424bb4e1-2fcf-45ff-b772-acad140cd7cc'
+    api_key_for_yandex = api_key.get_api_key()
     address = local
-    params = dict(apikey=api_key, geocode=address)
+    params = dict(apikey=api_key_for_yandex, geocode=address)
     try:
         url = 'https://geocode-maps.yandex.ru/1.x/?format=json'
         res = requests.get(url, params=params)

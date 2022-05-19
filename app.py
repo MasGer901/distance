@@ -4,7 +4,6 @@ import location
 import logging
 import database
 
-
 app = Flask(__name__)
 
 
@@ -33,6 +32,13 @@ logging.basicConfig(
     datefmt='%H:%M:%S',
 )
 
+import sys
+sh = logging.StreamHandler(sys.stdout)
+
+logger = logging.getLogger()
+
+logger.addHandler(sh)
+
 
 @app.route('/')
 @app.route('/home')
@@ -42,6 +48,7 @@ def index():
 
 @app.route('/create-article', methods=['POST', 'GET'])
 def create_article():
+    global _id
     if request.method == "POST":
         city = request.form['city']
         street = request.form['street']
@@ -49,27 +56,23 @@ def create_article():
 
         local = city + street + house
         try:
-            try:
-                coordinates = location.location(local)
-                logging.info(coordinates)
-                Lo1 = float(coordinates[0])
-                La1 = float(coordinates[1])
-            except:
-                return "При вычислении координат ошибка"
-
-            try:
-                calculated = distance.create_lo_la(coordinates)
-                logging.info(calculated)
-            except:
-                return "при вычислении расстояния ошибка"
-
-            try:
-                id = database.receiver(city, street, house, Lo1, La1, calculated)
-            except:
-                return "При записи в бд ошибка"
-            return redirect('/calculated_distance/' + f"{id}")
+            coordinates = location.location(local)
+            logger.info(coordinates)
+            Lo1 = float(coordinates[0])
+            La1 = float(coordinates[1])
         except:
-            return "При вычислении произошли ошибки"
+            return "При вычислении координат ошибка"
+
+        try:
+            calculated = distance.create_lo_la(coordinates)
+            logger.info(calculated)
+        except:
+            return "При вычислении расстояния ошибка"
+
+        etr = (city, street, house, Lo1, La1, calculated)
+        logger.info(etr)
+        _id = database.receiver(city, street, house, Lo1, La1, calculated)
+        return redirect('/calculated_distance/' + f"{_id}")
     else:
         return render_template("create-article.html")
 
@@ -83,7 +86,7 @@ def calculated_distance():
 @app.route('/calculated_distance/<int:id>')
 def post_detail(id):
     post = database.calculated_id(id)
-    logging.info(post)
+    logger.info(post)
     return render_template("calculated_distance.html", post=post)
 
 

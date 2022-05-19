@@ -1,9 +1,16 @@
-FROM python:3
+FROM python:3.10-slim-buster
 
-COPY  . .
+COPY  . /distance
 
-WORKDIR /root
+WORKDIR /distance
 
-RUN pip install flask requests gunicorn
+COPY requirements.txt requirements.txt
 
-CMD [ "python", "./app.py", "./database" ]
+RUN pip install -r requirements.txt --use-deprecated=legacy-resolver
+
+
+RUN pip install gunicorn
+
+CMD ["gunicorn"  , "-b", "0.0.0.0:5000", "app:app"]
+
+EXPOSE 5000
