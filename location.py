@@ -4,7 +4,6 @@ import api_key
 
 
 def location(local):
-    global res
     api_key_for_yandex = api_key.get_api_key()
     address = local
     params = dict(apikey=api_key_for_yandex, geocode=address)

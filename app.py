@@ -3,9 +3,14 @@ import distance
 import location
 import logging
 import database
+from admin.admin import admin
+
+
+SECRET_KEY = 'fdgfh78@#5?>gfhf89dx,v06k'
 
 app = Flask(__name__)
-
+app.config.from_object(__name__)
+app.register_blueprint(admin, url_prefix='/admin')
 
 logging.basicConfig(
     level=logging.DEBUG,
