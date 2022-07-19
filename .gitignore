@@ -1,5 +1,4 @@
 mylog.log
 service.db
-idea
-__pycache__
+.idea
 api_key.py
