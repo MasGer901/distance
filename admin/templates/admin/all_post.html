@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Все статьи на сайте
+{% endblock title %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h1>Все рассчеты на сайте</h1>
+
+    {% if articles|length > 0 %}
+       {% for el in articles %}
+        <div class="alert alert-info">
+            <h2> Город {{ el[1] }}, улица {{ el[2] }}, дом {{ el[3] }} </h2>
+            <a href="/calculated_distance/{{ el[0] }}" class="btn btn-warning">Детальнее</a>
+        </div>
+        {% endfor %}
+    {%else%}
+    <p>У нас еще нет рассчетов на сайте</p>
+    {% endif %}
+</div>
+{% endblock body %}
